@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  debut_date: 2022-07-06
+  contract: one
+
+two:
+  name: MyString
+  type: 
+  debut_date: 2022-07-06
+  contract: two

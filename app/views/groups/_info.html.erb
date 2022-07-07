@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Conciertos totales </th>
+      <th>Fecha ultimo concierto</th>
+      <th>Concierto Audiencia  Máxima</th>
+      <th>Concierto Duracion Máxima</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @Concerts.id.count %></td>
+      <td><%= @concerts.date.strftime("Printed on %m%d%Y a %I:%M %p") %></td>
+      <td><%= @concerts.audiece.max %></td>
+      <td><%= @concerts.duration.max%></td>
+    </tr>
+  </tbody>
+</table>

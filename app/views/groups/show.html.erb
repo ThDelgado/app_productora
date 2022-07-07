@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @group %>
+<br>
+<div class="container">
+  <table>
+        <thead>
+            <tr>
+                <th>No. concierto</th>
+                <th class="text-center">Audiencia</th>
+                <th class="text-center">Fecha</th>
+                <th colspan="4"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+          <% @concerts.each do |concert| %>
+            <tr>
+                <th class="text-center"><%= concert.id %></th>
+                <td class="text-center"><%= concert.audience %></td>
+                <td class="text-center"><%= concert.date %></td>      
+            </tr>
+          <% end %>
+       
+      </table>
+</div>
+    <br>
+    <div class="container">
+      <p>Cantidad de conciertos: <%=@concerts.pluck(:concert_id).count%></p>
+      <p>Fecha ultimo concierto: <%=@concerts.pluck(:date).last.strftime("%m-%d-%Y at %I:%M")%></p>
+      <p>Audiencia maxima: <%=@concerts.pluck(:audience).max%></p>
+      <p>Audiencia minima: <%=@concerts.pluck(:audience).min%><p>
+    </div>
+<div>
+  <%= link_to "Editar grupo", edit_group_path(@group) %> |
+  <%= link_to "Regresar grupo", groups_path %>
+
+  <%= button_to "Eliminar group", @group, method: :delete %>
+</div>
